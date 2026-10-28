@@ -1,0 +1,6 @@
+# only signed APKs, latest.json and the download page live here - never data or keys
+*.keystore
+*.jks
+*.properties
+lift_backup_*.json
+*.csv

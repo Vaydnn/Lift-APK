@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lift for Android</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;background:#0f0f13;color:#e8e8e8;font:16px/1.5 system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}
+  main{max-width:420px;padding:24px}
+  h1{font:600 36px/1.1 system-ui,sans-serif;margin:0 0 4px} h1 b{color:#8080ff}
+  p{color:#a9a9b8;margin:.6em 0}
+  a.btn{display:block;text-align:center;background:#8080ff;color:#0f0f13;font-weight:600;padding:14px;border-radius:12px;text-decoration:none;margin:20px 0 8px}
+  small{color:#7d7d8c} ol{color:#a9a9b8;padding-left:20px} li{margin:.4em 0}
+</style></head><body><main>
+<h1>Lift<b>.</b></h1>
+<p id="v">Checking the latest version…</p>
+<a class="btn" id="dl" href="#" hidden>Download the APK</a>
+<small id="n"></small>
+<ol>
+  <li>In the old Lift: <b>💾 Backup</b> and save the file.</li>
+  <li>Download and open the APK. Allow “install unknown apps” for this browser once.</li>
+  <li>If Play Protect warns about an unrecognized app, choose <b>Install anyway</b>.</li>
+  <li>Open Lift → <b>↺ Restore</b> and pick the backup file.</li>
+</ol>
+<script>
+fetch('latest.json?'+Date.now()).then(r=>r.json()).then(j=>{
+  document.getElementById('v').textContent='Latest: version '+j.version+(j.released?' ('+j.released+')':'');
+  const a=document.getElementById('dl'); a.href=j.url; a.hidden=false;
+  if(j.notes) document.getElementById('n').textContent=j.notes;
+}).catch(()=>{document.getElementById('v').textContent='Could not load the version info.';});
+</script></main></body></html>
