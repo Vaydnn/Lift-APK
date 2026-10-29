@@ -1,6 +1,6 @@
 {
-    "version":  "1.5.1",
-    "url":  "https://vaydnn.github.io/Lift-APK/lift-1.5.1.apk",
-    "notes":  "Fixes: opens the new day after being left open overnight (it used to log into yesterday), stall warning catches plateaus, faster on long histories, typo protection, lb/kg converts, unfolded supersets.",
+    "version":  "1.6.0",
+    "url":  "https://vaydnn.github.io/Lift-APK/lift-1.6.0.apk",
+    "notes":  "Tab bar, log any past day, number pad, History by week, undo, exercise notes, status-bar fix",
     "released":  "2026-10-28"
 }
